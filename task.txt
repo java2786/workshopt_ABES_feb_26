@@ -1,0 +1,10 @@
+npm init -y
+
+npm i express multer cors tesseract.js 
+npm i @google/generative-ai
+npm install pdf-parse
+npm i dotenv
+
+
+create file named as server.js
+- Import all the packages
