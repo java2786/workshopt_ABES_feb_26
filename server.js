@@ -16,16 +16,17 @@ const server = express()
 
 
 server.use(
-    express.static('public')
+    express.static('public'),
+    express.json()
 )
 
 server.get("/", function(req, res){
     res.json({message: "this message is from server"})
 })
 
-// server.post("/resume", multer, function(req, res){
+server.post("/resume/upload", multer, function(req, res){
 
-// })
+})
 
 
 server.listen(PORT, function(){
