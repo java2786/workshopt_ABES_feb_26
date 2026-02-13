@@ -11,10 +11,14 @@ import {GoogleGenerativeAI} from "@google/generative-ai";
 
 dotenv.config();
 const PORT = process.env.PORT;
-// console.log(PORT)
-// console.log("Type is: "+ typeof(express))
 
 const server = express()
+
+server.get("/", function(req, res){
+    res.json({message: "this message is from server"})
+})
+
+
 
 server.listen(PORT, function(){
     console.log("App is running at: "+PORT)
