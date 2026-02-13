@@ -14,10 +14,18 @@ const PORT = process.env.PORT;
 
 const server = express()
 
+
+server.use(
+    express.static('public')
+)
+
 server.get("/", function(req, res){
     res.json({message: "this message is from server"})
 })
 
+// server.post("/resume", multer, function(req, res){
+
+// })
 
 
 server.listen(PORT, function(){
