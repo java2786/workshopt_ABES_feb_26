@@ -14,6 +14,7 @@ const PORT = process.env.PORT;
 
 const server = express()
 
+const upload = multer({ storage: multer.memoryStorage() });
 
 server.use(
     express.static('public'),
@@ -24,8 +25,11 @@ server.get("/", function(req, res){
     res.json({message: "this message is from server"})
 })
 
-server.post("/resume/upload", multer, function(req, res){
+server.post("/resume/upload", upload.single("resume"), function(req, res){
 
+
+    console.log(!!req.file)
+    res.json({demo: "some data"})
 })
 
 
